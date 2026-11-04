@@ -1,0 +1,13 @@
+torch>=2.0
+numpy>=1.23
+soundfile>=0.12
+scipy>=1.10
+
+# Qwen realtime (Qwen3.5-Omni adapter)
+dashscope>=1.23.9
+
+# Qwen-Audio-3.0-Realtime / OpenAI Realtime / GPT-Live
+websockets>=12.0
+
+# Gemini Live
+google-genai>=1.0.0

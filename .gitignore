@@ -1,0 +1,22 @@
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.egg-info/
+.eggs/
+dist/
+build/
+.venv/
+venv/
+.env
+*.log
+output/
+
+# secrets / local endpoint config (any dotenv-style file)
+*.env
+
+# tooling artifacts
+.zcodeignore
+backends/output/
