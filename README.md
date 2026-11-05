@@ -15,6 +15,35 @@ benchmark JSONL ──▶ realqa.runner (API inference) ──▶ predictions.js
                        (streaming / post-audio metrics)
 ```
 
+## Paper
+
+This toolkit accompanies:
+
+> **LibriSpeech-Real-QA: A Benchmark for Streaming Question Answering**  
+> Zewen Zhan, Hui Lu, Xueyuan Chen, Huimeng Wang, Yikai Huang, Xixin Wu,
+> Shiyin Kang, Bin Xia, Zhiyong Wu  
+> [arXiv:2611.06496](https://arxiv.org/abs/2611.06496) — submitted to
+> IEEE ICASSP 2027
+
+> Most speech large language models (SLMs) still process speech in an
+> offline manner. They only start responding after they receive the
+> complete speech segment. However, many real-world applications require
+> streaming speech interaction, for which the audio continuously flows in
+> and the machine is required to answer questions based on the so far
+> received audio chunks. For example, a user may ask the system to
+> continuously count how many times a person's name has been mentioned
+> while they are speaking. We observe a lack of benchmarks and evaluation
+> protocols for real-time speech interaction. Motivated by this, we
+> propose LibriSpeech-Real-QA, a dataset and a benchmark for real-time
+> speech interaction. We construct different types of real-time
+> question-answer pairs from LibriSpeech to evaluate whether speech LLMs
+> can identify target words in streaming audio. We evaluate several
+> popular real-time commercial models and find that they still tend to
+> respond only after the speech turn has finished. We demonstrate that we
+> can enable a pretrained SLM to perform this task, where we explore
+> several modeling designs and establish a solid baseline for future
+> research.
+
 ## 1. Environment setup
 
 ### 1.1 Python dependencies
@@ -225,3 +254,17 @@ filter the predictions file, or run one inference pass per task with
 | ``--onset-source`` | Prediction units/timing: ``auto`` (events per row when ``pred_runs`` present, else grid), ``events`` (require ``pred_runs``), ``grid`` (always derive from the token grid; native causal timing for silence-token models) |
 | ``--metric-mode`` | ``streaming`` (default) or ``post_audio`` |
 | ``--early-eps-sec`` | post_audio only: reject answers starting > this many seconds before ``t_start`` (default 0.05) |
+
+## Cite Us
+
+If you use this toolkit, the LibriSpeech-Real-QA benchmark, or its
+evaluation protocol in your research, please cite:
+
+```bibtex
+@article{zhan2026librispeech,
+  title   = {LibriSpeech-Real-QA: A Benchmark for Streaming Question Answering},
+  author  = {Zhan, Zewen and Lu, Hui and Chen, Xueyuan and Wang, Huimeng and Huang, Yikai and Wu, Xixin and Kang, Shiyin and Xia, Bin and Wu, Zhiyong},
+  journal = {arXiv preprint arXiv:2611.06496},
+  year    = {2026}
+}
+```
